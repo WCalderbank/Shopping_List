@@ -212,6 +212,14 @@ Grocery List
   transition: all 0.5s linear;
 }
 
+.edit-btn {
+  color: #155724;
+}
+
+.delete-btn {
+  color: #721c24;
+}
+
 .clear-btn {
   text-transform: capitalize;
   width: 10rem;
@@ -220,7 +228,6 @@ Grocery List
   align-items: center;
   background: transparent;
   border-color: transparent;
-  color: var(--clr-red-light);
   margin: 0 auto;
   font-size: 0.85rem;
   letter-spacing: 0.1rem;
