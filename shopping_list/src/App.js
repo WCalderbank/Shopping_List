@@ -19,7 +19,18 @@ function App() {
     if (!name) {
       displayAlert(true, "wrong", "Nothing To Submit");
     } else if (name && change) {
-      // deal with edit
+      setList(
+        list.map((thing) => {
+          if (thing.id === changeID) {
+            return { ...thing, title: name };
+          }
+          return thing;
+        })
+      );
+      setName("");
+      setChangeID(null);
+      setChange(false);
+      displayAlert(true, "correct", "List Edited");
     } else {
       displayAlert(true, "correct", "Added To List!");
       const newObject = { id: new Date().getTime().toString(), title: name };
@@ -46,6 +57,7 @@ function App() {
     const targetThing = list.find((thing) => thing.id === id);
     setChange(true);
     setChangeID(id);
+    setName(targetThing.title);
   };
 
   return (
@@ -70,7 +82,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="shopping-container">
-          <List things={list} deleteThing={deleteThing} />
+          <List things={list} deleteThing={deleteThing} editThing={editThing} />
           <button className="clear-btn" onClick={clearList}>
             Clear List
           </button>
