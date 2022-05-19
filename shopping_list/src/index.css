@@ -106,11 +106,7 @@ main {
   display: grid;
   place-items: center;
 }
-/*
-=============== 
-Grocery List
-===============
-*/
+
 .section-main {
   background: #fff;
   border-radius: 0.25rem;
